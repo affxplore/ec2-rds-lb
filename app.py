@@ -10,9 +10,9 @@ app = Flask(__name__)
 
 # Database configuration
 db_config = {
-    'host': os.getenv('DB_HOST', 'localhost'),
+    'host': os.getenv('DB_HOST', 'guestbook-db.ct6oocsiknzq.us-east-1.rds.amazonaws.com'),
     'user': os.getenv('DB_USER', 'admin'),
-    'password': os.getenv('DB_PASSWORD', 'password123'),
+    'password': os.getenv('DB_PASSWORD', '12345678'),
     'database': os.getenv('DB_NAME', 'guestbook_db')
 }
 
@@ -58,4 +58,4 @@ def health():
 
 if __name__ == '__main__':
     # On EC2, we usually run with Gunicorn, but for dev:
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=80)
